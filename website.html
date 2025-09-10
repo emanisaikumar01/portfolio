@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E.B.K.Sai Kumar | Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the futuristic theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate 950 */
+            color: #e2e8f0; /* Slate 200 */
+            overflow-x: hidden;
+        }
+
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(-45deg, #020617, #0f172a, #1e293b, #020617);
+            background-size: 400% 400%;
+            animation: gradient 20s ease infinite;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism effect for nav and cards */
+        .glass-effect {
+            background: rgba(15, 23, 42, 0.6); /* Slate 900 with alpha */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.4); /* Slate 700 with alpha */
+        }
+
+        /* Animated gradient text */
+        .animated-gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% auto;
+            animation: gradient-text 8s ease-in-out infinite;
+        }
+
+        @keyframes gradient-text {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* Reveal on scroll animation */
+        .reveal {
+            position: relative;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: 1s all ease;
+        }
+
+        .reveal.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Interactive dots background */
+        #dots-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="gradient-bg"></div>
+    <canvas id="dots-canvas"></canvas>
+
+    <!-- Header -->
+    <header id="header" class="glass-effect fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tighter animated-gradient-text">E.B.K.Sai Kumar</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-sky-400 transition duration-300">About</a>
+                <a href="#experience" class="text-slate-300 hover:text-sky-400 transition duration-300">Experience</a>
+                <a href="#projects" class="text-slate-300 hover:text-sky-400 transition duration-300">Projects</a>
+                <a href="#contact" class="text-slate-300 hover:text-sky-400 transition duration-300">Contact</a>
+            </nav>
+            <a href="#contact" class="hidden md:block bg-sky-500 hover:bg-sky-400 text-white font-bold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105">
+                Get In Touch
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-slate-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
+            <a href="#experience" class="block py-2 text-slate-300 hover:text-sky-400">Experience</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-sky-400">Projects</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">Contact</a>
+            <a href="#contact" class="block mt-2 bg-sky-500 text-center hover:bg-sky-400 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                Get In Touch
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex flex-col justify-center items-start text-left">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 leading-tight reveal">
+                    I build <span class="animated-gradient-text">intelligent solutions</span> for the web.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 mb-8 max-w-2xl reveal">
+                    My name is E.B.K.Sai Kumar. I'm a full-stack developer and AI enthusiast specializing in crafting intelligent, user-centric web applications that feel like the future.
+                </p>
+                <div class="reveal">
+                    <a href="#projects" class="bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 text-lg">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 lg:py-32">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter">About Me</h2>
+                <p class="text-lg text-slate-400 mt-2">A glimpse into my universe.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal flex justify-center">
+                    <img src="profile.jpg" alt="E.B.K.Sai Kumar" class="rounded-full w-64 h-64 object-cover shadow-2xl border-8 border-transparent" style="background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc, #f472b6); box-shadow: 0 0 40px 10px #38bdf8, 0 0 80px 20px #c084fc;">
+                </div>
+                <div class="space-y-6 text-slate-300 text-lg reveal">
+                    <p>
+                        From a young age, I was captivated by the intersection of technology and creative problem-solving. This passion led me down a rabbit hole of code, AI models, and web architecture. I thrive on solving complex challenges and believe that the best digital products are not just functional, but also smart and intuitive.
+                    </p>
+                    <p>
+                        My toolkit is always evolving, but my core skills are rooted in web development, AI integration, and cybersecurity principles. I see every project as an opportunity to build something innovative and impactful.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 lg:py-32">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Experience & Certifications</h2>
+                <p class="text-lg text-slate-400 mt-2">My credentials and practical experience.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Certifications Card -->
+                <div class="glass-effect rounded-2xl p-8 reveal">
+                    <h3 class="text-2xl font-bold mb-6 text-sky-400">Certifications</h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start"><strong class="font-semibold text-white w-24">Python</strong><span>from Kaggle</span></li>
+                        <li class="flex items-start"><strong class="font-semibold text-white w-24">Java</strong><span>from Infosys</span></li>
+                        <li class="flex items-start"><strong class="font-semibold text-white w-24">Azure</strong><span>from Microsoft</span></li>
+                    </ul>
+                </div>
+                <!-- Internships Card -->
+                <div class="glass-effect rounded-2xl p-8 reveal">
+                    <h3 class="text-2xl font-bold mb-6 text-sky-400">Internships</h3>
+                    <ul class="space-y-4 text-slate-300">
+                        <li class="flex items-start"><strong class="font-semibold text-white w-32">Cyber Security</strong><span>in Ethical Hacking</span></li>
+                        <li class="flex items-start"><strong class="font-semibold text-white w-32">Web Development</strong><span>Full-stack Role</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 lg:py-32">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter">My Projects</h2>
+                <p class="text-lg text-slate-400 mt-2">Crafted with code and a touch of stardust.</p>
+            </div>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="glass-effect rounded-2xl overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <img src="https://placehold.co/600x400/0f172a/c084fc?text=AI+Resume" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="AI Resume Analyzer">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-slate-100">AI Resume Analyzer</h3>
+                        <p class="text-slate-400 mb-4">A tool that uses AI to parse, analyze, and score resumes against job descriptions, helping recruiters find the perfect candidate.</p>
+                        <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 transition duration-300">View Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="glass-effect rounded-2xl overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <img src="https://placehold.co/600x400/0f172a/f472b6?text=AI+Chatbot" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" alt="AI Chatbot">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 text-slate-100">AI Chatbot</h3>
+                        <p class="text-slate-400 mb-4">An intelligent, conversational AI chatbot for customer support, capable of understanding natural language and resolving user queries.</p>
+                        <a href="#" class="font-semibold text-sky-400 hover:text-sky-300 transition duration-300">View Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 lg:py-32">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Let's Connect</h2>
+                <p class="text-lg text-slate-400 mt-2">Have a project in mind or just want to say hello? Drop me a line.</p>
+            </div>
+            <div class="max-w-xl mx-auto glass-effect p-8 md:p-12 rounded-2xl reveal">
+                <form action="#" method="POST">
+                    <div class="mb-6">
+                        <label for="name" class="block text-slate-400 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full bg-slate-900/70 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-slate-400 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full bg-slate-900/70 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-300" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-slate-400 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full bg-slate-900/70 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition duration-300" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 text-lg">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-10 text-center">
+                    <p class="text-slate-400 mb-4">Or find me on:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://www.instagram.com/emanisaikumar01/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-pink-500 transition duration-300 transform hover:scale-110">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.884 2 12.315 2zm-1.04 2.113a10.887 10.887 0 00-3.568.056c-.92.043-1.465.197-1.9.395-.44.2-.785.45-1.125.795a2.893 2.893 0 00-.795 1.125c-.2.435-.352.98-.395 1.9-.043 1.003-.056 1.32-.056 3.568s.013 2.565.056 3.568c.043.92.197 1.465.395 1.9.2.44.45.785.795 1.125a2.893 2.893 0 001.125.795c.435.2.98.352 1.9.395 1.003.043 1.32.056 3.568.056s2.565-.013 3.568-.056c.92-.043 1.465-.197 1.9-.395.44-.2.785-.45 1.125-.795a2.893 2.893 0 00.795-1.125c.2-.435.352-.98.395-1.9.043-1.003.056-1.32.056-3.568s-.013-2.565-.056-3.568c-.043-.92-.197-1.465-.395-1.9-.2-.44-.45-.785-.795-1.125a2.893 2.893 0 00-1.125-.795c-.435-.2-.98-.352-1.9-.395-1.003-.043-1.32-.056-3.568-.056zM12 6.845a5.155 5.155 0 100 10.31 5.155 5.155 0 000-10.31zm0 8.217a3.062 3.062 0 110-6.123 3.062 3.062 0 010 6.123zM16.95 6.402a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <a href="https://github.com/emanisaikumar01" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition duration-300 transform hover:scale-110">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/emani-sai-kumar" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-500 transition duration-300 transform hover:scale-110">
+                            <span class="sr-only">LinkedIn</span>
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            <p>&copy; 2025 E.B.K.Sai Kumar. All rights reserved.</p>
+            <p class="mt-2 text-sm">Designed and built from a distant galaxy.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for interactivity
+
+        // 1. Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Header Style on Scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.add('py-4');
+            }
+        });
+        
+        // 3. Reveal on Scroll Animation
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    // Optional: remove active class to re-trigger animation
+                    // reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Initial check
+        reveal();
+
+        // 4. Interactive Dots Background
+        const canvas = document.getElementById('dots-canvas');
+        const ctx = canvas.getContext('2d');
+        let mouse = { x: null, y: null };
+        let dots = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        window.addEventListener('mousemove', function(event) {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        class Dot {
+            constructor(x, y, size, color) {
+                this.x = x;
+                this.y = y;
+                this.baseX = x;
+                this.baseY = y;
+                this.size = size;
+                this.color = color;
+                this.density = (Math.random() * 30) + 1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = 100;
+                let force = (maxDistance - distance) / maxDistance;
+
+                let directionX = (forceDirectionX * force * this.density);
+                let directionY = (forceDirectionY * force * this.density);
+
+                if (distance < maxDistance) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        let dx = this.x - this.baseX;
+                        this.x -= dx / 10;
+                    }
+                    if (this.y !== this.baseY) {
+                        let dy = this.y - this.baseY;
+                        this.y -= dy / 10;
+                    }
+                }
+            }
+        }
+
+        function init() {
+            dots = [];
+            const gap = 30;
+            for (let x = 0; x < canvas.width; x += gap) {
+                for (let y = 0; y < canvas.height; y += gap) {
+                    dots.push(new Dot(x, y, 1, 'rgba(56, 189, 248, 0.4)'));
+                }
+            }
+        }
+        init();
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].draw();
+                dots[i].update();
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            init();
+        });
+
+    </script>
+</body>
+</html>
+
+
