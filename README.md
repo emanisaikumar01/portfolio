@@ -33,3 +33,38 @@ The website serves as an interactive platform where recruiters, collaborators, a
 5. Ensured full responsiveness and smooth performance
 
 ## 📂 Folder Structure
+portfolio-website/
+│
+├── public/ # Static assets (images, icons)
+├── src/
+│ ├── components/ # Reusable React components
+│ ├── pages/ # About, Projects, Contact pages
+│ ├── assets/ # Images and other static files
+│ ├── App.jsx # Main application file
+│ └── index.js # Entry point
+├── tailwind.config.js # Tailwind CSS configuration
+├── package.json # Project dependencies
+└── README.md # Project documentation
+
+
+## 🚧 Customizations
+- The generated AI code was improved for cleaner structure and maintainability
+- Custom animations and transitions were added for a professional feel
+- Personalized content added (my projects, skills, contact info)
+- Fixed responsiveness issues and optimized performance
+
+## 📱 Preview
+You can view the live demo [here](https://your-portfolio-url.com)
+
+## ✅ Next Steps
+- Continuously update the portfolio with new projects and achievements
+- Add blog section for personal insights
+- Improve SEO and accessibility further
+
+## ✍️ Author
+**[Your Name]**  
+[Your LinkedIn Profile] | [Your GitHub Profile] | [Your Email]
+
+---
+
+📢 Feel free to clone this project, contribute, or provide feedback!
