@@ -1,20 +1,85 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 🚀 My Portfolio Website
 
-# Run and deploy your AI Studio app
+Welcome to my personal portfolio! This project showcases my skills, achievements, and projects as a developer, along with creative 3D animations and modern UI/UX design.
 
-This contains everything you need to run your app locally.
+## 🌐 Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ZserG7IY4Pfzx0NOTi6rBrlkXBnYzlXd
+[https://portfolio-two-omega-15.vercel.app/](https://portfolio-two-omega-15.vercel.app/)
 
-## Run Locally
+---
 
-**Prerequisites:**  Node.js
+## 📌 About the Project
 
+This portfolio website is designed to represent my professional identity, skills, experience, certifications, and featured projects in a visually attractive and interactive manner. The website is built with a futuristic theme featuring 3D animations, smooth transitions, and responsive layouts for all devices.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## ✨ Features
+
+* Fully responsive modern UI
+* 3D animations & visual effects
+* Animated hero section with rocket launch concept
+* Projects section with links to GitHub/live demos
+* Skill showcase with animated progress
+* Contact form powered by EmailJS
+* Smooth scrolling & section transitions
+* SEO-friendly structure
+
+---
+
+## 🧠 Tech Stack
+
+| Technology              | Usage                              |
+| ----------------------- | ---------------------------------- |
+| **HTML5**               | Structure                          |
+| **CSS3 / Tailwind CSS** | Styling & animations               |
+| **JavaScript (ES6)**    | Frontend logic                     |
+| **React.js**            | Building UI components             |
+| **Framer Motion**       | Page transitions & animations      |
+| **EmailJS**             | Send messages through contact form |
+| **Unsplash**            | Stock images                       |
+
+---
+
+## 📂 Folder Structure
+
+```
+root
+│── public
+│   ├── index.html
+│   ├── assets
+│
+│── src
+│   ├── components
+│   ├── sections
+│   ├── animations
+│   ├── styles
+│   ├── App.jsx
+│   ├── index.jsx
+│
+└── package.json
+```
+
+---
+
+## 🎯 Purpose
+
+This portfolio is built to present myself professionally, apply for internships & full‑time roles, and showcase my projects effectively to recruiters.
+
+---
+
+## 📞 Contact
+
+**Email:** emanisaikumar01@gmail.com
+**LinkedIn:** www.linkedin.com/in/emani-sai-kumar
+**GitHub:** https://github.com/emanisaikumar01
+
+---
+
+## 📝 License
+
+This project is open-source and free to use. Feel free to fork and customize.
+
+---
+
+### ⭐ If you like this project, please give it a star on GitHub!
