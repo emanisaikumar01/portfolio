@@ -4,7 +4,7 @@ Welcome to my personal portfolio! This project showcases my skills, achievements
 
 ## 🌐 Live Demo
 
-[https://portfolio-two-omega-15.vercel.app/](https://portfolio-two-omega-15.vercel.app/)
+[https://portfolio-two-omega-15.vercel.app/](https://portfolio-lyart-one-hqpg4da01j.vercel.app/)
 
 ---
 
